@@ -3,7 +3,7 @@ import streamlit as st
 
 from constantes import ROUTE_TYPE, DEPARTMENTS, COLLISION, AGG, LUM, ATM
 
-st.set_page_config(page_title="Carte Interactive", page_icon="🌍")
+st.set_page_config(page_title="Carte Interactive", page_icon="🌍", layout = "wide")
 
 dataUsagers = pd.read_csv("datas/usagers.csv", sep=";")
 dataVehicules = pd.read_csv("datas/vehicules.csv", sep=";")
@@ -78,7 +78,7 @@ with st.sidebar:
 
     colisions = sorted(COLLISION.values())
     colisions = add_all_option(colisions)
-    selectedColision = st.selectbox(label="Colision", options=colisions)
+    selectedColision = st.selectbox(label="Type Collision", options=colisions)
     if selectedColision != "Tous":
         inversedDico = dict(map(reversed, COLLISION.items()))
         selectedColision = inversedDico[selectedColision]
