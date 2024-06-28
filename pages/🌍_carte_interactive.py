@@ -59,7 +59,7 @@ with st.sidebar:
     )
     if conditionEclairageSelected != "Tous":
         inversedDico = dict(map(reversed, LUM.items()))
-        localisationSelected = inversedDico[conditionEclairageSelected]
+        conditionEclairageSelected = inversedDico[conditionEclairageSelected]
         filteredCaracteristiques = filteredCaracteristiques[
             filteredCaracteristiques["lum"] == conditionEclairageSelected
         ]
